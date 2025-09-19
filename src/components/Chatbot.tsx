@@ -1,12 +1,12 @@
+// src/components/Chatbot.tsx
 import { useEffect, useRef, useState } from "react";
 import { X, MessageCircle } from "lucide-react";
 import ChatForm from "./ChatForm";
 import { type ChatMessageType } from "./ChatMessage";
 import { fraInfo } from "../fraInfo";
-import ReactMarkdown from "react-markdown";
 
 type ApiMessage = {
-  role: "user" | "bot" | "model";
+  role: "user" | "bot" | "model" | "system";
   parts: { text: string }[];
 };
 
@@ -18,10 +18,20 @@ const Chatbot = () => {
   const chatBodyRef = useRef<HTMLDivElement>(null);
 
   const generateBotResponse = async (history: ChatMessageType[]) => {
-    const apiHistory: ApiMessage[] = history.map(({ role, text }) => ({
-      role,
-      parts: [{ text }],
-    }));
+    const apiHistory: ApiMessage[] = [
+      {
+        role: "system",
+        parts: [
+          {
+            text: "You are an FRA Atlas assistant. Always reply in short, crisp sentences (max 5-6 lines). Use bullet points only if necessary."
+          }
+        ]
+      },
+      ...history.map(({ role, text }) => ({
+        role,
+        parts: [{ text }],
+      })),
+    ];
 
     try {
       const response = await fetch(
@@ -33,8 +43,14 @@ const Chatbot = () => {
         }
       );
       const data = await response.json();
-      const botReply =
+
+      let botReply =
         data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || "⚠️ No reply";
+
+      // Enforce shorter replies
+      if (botReply.length > 400) {
+        botReply = botReply.slice(0, 400) + "…";
+      }
 
       setChatHistory((prev) => [
         ...prev.filter((msg) => msg.text !== "Thinking..."),
@@ -88,12 +104,12 @@ const Chatbot = () => {
         {/* Chat Body */}
         <div
           ref={chatBodyRef}
-          className="flex-1 overflow-y-auto px-3 py-3 flex flex-col gap-3 bg-gray-50"
+          className="flex-1 overflow-y-auto px-3 py-3 flex flex-col gap-3 bg-gray-50 prose prose-sm"
         >
           {/* Initial Bot Message */}
           <div className="flex items-start">
             <div className="bg-green-100 text-green-800 p-2 rounded-xl shadow-sm max-w-[75%]">
-              Hello! How can I assist you today?
+              Hello! Ask me about FRA Act and state-wise info.
             </div>
           </div>
 
@@ -101,7 +117,9 @@ const Chatbot = () => {
           {chatHistory.map((chat, idx) => (
             <div
               key={idx}
-              className={`flex ${chat.role === "user" ? "justify-end" : "justify-start"}`}
+              className={`flex ${
+                chat.role === "user" ? "justify-end" : "justify-start"
+              }`}
             >
               <div
                 className={`p-2 rounded-xl shadow-sm max-w-[75%] break-words ${
@@ -110,7 +128,7 @@ const Chatbot = () => {
                     : "bg-green-100 text-green-800 rounded-bl-none prose prose-sm"
                 }`}
               >
-                <ReactMarkdown>{chat.text}</ReactMarkdown>
+                {chat.text}
               </div>
             </div>
           ))}
