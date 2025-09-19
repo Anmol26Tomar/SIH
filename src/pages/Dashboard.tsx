@@ -176,19 +176,19 @@ const Dashboard: React.FC = () => {
                   cy="50%"
                   outerRadius={100}
                   dataKey="value"
-                  /* label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`} */
                   label={({
                     name,
                     percent,
                   }: {
                     name?: string;
                     percent?: number;
-                  }) => `${name} ${(percent ?? 0 * 100).toFixed(0)}%`}
+                  }) => `${name} ${((percent ?? 0) * 100).toFixed(0)}%`}
                 >
                   {approvalData.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={entry.color} />
                   ))}
                 </Pie>
+
                 <Tooltip />
               </PieChart>
             </ResponsiveContainer>
