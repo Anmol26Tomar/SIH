@@ -36,9 +36,8 @@ export default function Signup() {
   }
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-50">
+    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-green-400 to-green-800">
       <div className="bg-white w-96 p-6 rounded-xl shadow-lg">
-        {/* Header */}
         <div className="mb-4 text-center">
           <h2 className="text-black text-2xl font-bold">Create an account</h2>
           <p className="text-gray-500 text-sm mt-1">
@@ -46,7 +45,6 @@ export default function Signup() {
           </p>
         </div>
 
-        {/* Form */}
         <form className="flex flex-col gap-6">
           <div className="grid gap-2">
             <label className="text-black text-sm" htmlFor="email">Email</label>
@@ -81,7 +79,6 @@ export default function Signup() {
           </button>
         </form>
 
-        {/* Footer */}
         <p className="text-sm text-gray-500 mt-4 text-center">
           Already have an account?{" "}
           <Link to="/signin" className="text-green-600 hover:underline">

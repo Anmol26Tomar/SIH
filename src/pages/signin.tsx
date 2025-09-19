@@ -14,7 +14,7 @@ export default function Signin() {
     const password = passwordRef.current?.value;
 
     if (!email || !password) {
-      toast("Please enter both email and password", {
+      toast("Please fill out all fields", {
         icon: "⚠️",
         style: { background: "#facc15", color: "#000" },
       });
@@ -22,9 +22,12 @@ export default function Signin() {
     }
 
     try {
-      const response = await axios.post(`${BACKEND_URL}/signin`, { email, password });
+      const response = await axios.post(`${BACKEND_URL}/signin`, {
+        email,
+        password,
+      });
       localStorage.setItem("token", response.data.token);
-      toast.success("Signed in successfully");
+      toast.success("You have successfully signed in");
       setTimeout(() => navigate("/"), 800);
     } catch (error) {
       console.error("Signin failed:", error);
@@ -33,17 +36,15 @@ export default function Signin() {
   }
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-50">
+    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-green-400 to-green-800">
       <div className="bg-white w-96 p-6 rounded-xl shadow-lg">
-        {/* Header */}
         <div className="mb-4 text-center">
-          <h2 className="text-black text-2xl font-bold">Sign in</h2>
+          <h2 className="text-black text-2xl font-bold">Login to your account</h2>
           <p className="text-gray-500 text-sm mt-1">
-            Enter your email and password to access your account
+            Enter your email below to access your account
           </p>
         </div>
 
-        {/* Form */}
         <form className="flex flex-col gap-6">
           <div className="grid gap-2">
             <label className="text-black text-sm" htmlFor="email">Email</label>
@@ -78,7 +79,6 @@ export default function Signin() {
           </button>
         </form>
 
-        {/* Footer */}
         <p className="text-sm text-gray-500 mt-4 text-center">
           Don’t have an account?{" "}
           <Link to="/signup" className="text-green-600 hover:underline">
