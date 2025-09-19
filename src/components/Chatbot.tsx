@@ -73,7 +73,11 @@ const Chatbot = () => {
       <div
         className={`fixed bottom-20 right-6 w-80 max-h-[75vh] flex flex-col bg-white rounded-2xl shadow-2xl z-[999]
         transform transition-all duration-300 ease-in-out
-        ${showChatbot ? "translate-y-0 opacity-100" : "translate-y-24 opacity-0 pointer-events-none"}`}
+        ${
+          showChatbot
+            ? "translate-y-0 opacity-100"
+            : "translate-y-24 opacity-0 pointer-events-none"
+        }`}
       >
         {/* Header */}
         <div className="flex justify-between items-center px-4 py-3 bg-green-600 rounded-t-2xl text-white shadow-inner">
@@ -94,7 +98,7 @@ const Chatbot = () => {
           {/* Initial Greeting */}
           <div className="flex items-start">
             <div className="bg-green-100 text-green-800 p-2 rounded-xl shadow-sm max-w-[75%]">
-              👋 Hello! How can I assist you today?
+              👋 Hello! This is FRA Atlas AI chat support.
             </div>
           </div>
 
