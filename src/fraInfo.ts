@@ -1,55 +1,94 @@
 export const fraInfo = `
-Introduction:
-I am your FRA-Atlas chatbot, here to assist you with information on the Forest Rights Act (FRA), 2006 and its implementation across Indian states. I can help you understand the key provisions of the Act, the rights it secures for forest-dwelling communities, and state-specific details for Odisha, Madhya Pradesh, Tripura, and Telangana.
+🌳 Forest Rights Act (FRA), 2006 – Comprehensive Overview  
 
-About the Forest Rights Act (FRA) 2006:
-The Scheduled Tribes and Other Traditional Forest Dwellers (Recognition of Forest Rights) Act, 2006—commonly known as the Forest Rights Act (FRA)—was enacted to correct the historical injustice faced by forest-dwelling communities. It recognizes their rights over forest land and resources they have been dependent upon for generations.
+Introduction:  
+The Scheduled Tribes and Other Traditional Forest Dwellers (Recognition of Forest Rights) Act, 2006 — commonly known as the **Forest Rights Act (FRA), 2006** — is a landmark legislation in India. It recognizes and vests forest rights and occupation on forest land in forest-dwelling Scheduled Tribes (FDSTs) and other traditional forest dwellers (OTFDs) who have been residing in such forests for generations but whose rights were not recorded.  
 
-Key Provisions:
-- Individual Forest Rights (IFR): Rights to hold and live on forest land for habitation or self-cultivation for livelihood.
-- Community Forest Rights (CFR): Rights of communities to protect, regenerate, conserve, or manage community forest resources.
-- Community Rights (CR): Rights over minor forest produce (MFP), grazing, fishing, water bodies, and access to traditional resources.
-- Development Rights: Right to basic facilities (schools, healthcare, roads) without displacement.
-- Protection Rights: Community ownership empowers Gram Sabhas to protect biodiversity and manage forests sustainably.
+---
 
-Implementation Challenges:
-- Delays in claim verification and approval.
-- Lack of awareness among communities.
-- Conflicts between forest departments and Gram Sabhas.
-- Varying levels of implementation across states.
+Objectives of FRA 2006:  
+- Correct historical injustices faced by forest-dwelling communities.  
+- Recognize individual and community rights over forest land and resources.  
+- Strengthen conservation through community participation.  
+- Provide tenure security and livelihood support to tribal and forest-dependent communities.  
+- Decentralize forest governance by empowering Gram Sabhas.  
 
-State-Specific Information:
+---
 
-1. Odisha:
-- Odisha is among the leading states in implementing FRA.
-- Large number of Community Forest Rights (CFRs) have been granted, especially in tribal districts like Mayurbhanj, Kandhamal, and Sundargarh.
-- Odisha pioneered CFR titles at the village level, empowering Gram Sabhas in forest governance.
-- Challenges include recognition of habitat rights for Particularly Vulnerable Tribal Groups (PVTGs) and disputes with forest officials.
+Key Provisions of FRA 2006:  
+1. **Individual Rights (IFR):**  
+   - Right to hold and live in forest land under individual or common occupation for habitation or self-cultivation.  
+   - Maximum area: up to 4 hectares per family.  
 
-2. Madhya Pradesh (MP):
-- MP has the highest tribal population in India, making FRA implementation crucial.
-- Both IFRs and CFRs have been distributed widely, but with regional disparities.
-- Districts like Mandla, Dindori, and Alirajpur have seen active recognition of tribal rights.
-- Issues include high rejection rates of claims, inadequate awareness among forest dwellers, and bureaucratic hurdles.
-- Some positive models of CFR management have emerged in Gond and Baiga communities.
+2. **Community Forest Rights (CFR):**  
+   - Rights to use, manage, and conserve community forest resources.  
+   - Includes rights over minor forest produce (MFP), grazing, fishing, and access to water bodies.  
 
-3. Tripura:
-- FRA implementation started slower compared to larger states but has gained momentum.
-- Significant progress in distributing IFRs to tribal households, especially in areas under the Tripura Tribal Areas Autonomous District Council (TTAADC).
-- Community Forest Rights remain limited, though initiatives are growing.
-- Challenges include small landholding sizes, encroachment conflicts, and integration with local governance systems.
+3. **Community Forest Resource (CFR Management):**  
+   - Gram Sabha gets the authority to protect, regenerate, and manage forest resources.  
 
-4. Telangana:
-- Telangana, being a relatively new state (2014), inherited FRA responsibilities from Andhra Pradesh.
-- The state has recognized IFRs for many Scheduled Tribe families, particularly in districts like Adilabad and Khammam.
-- CFR implementation is still emerging, with efforts focused on empowering Lambada and Gond Gram Sabhas.
-- Challenges include political delays, land survey disputes, and balancing forest conservation with livelihood needs.
+4. **Other Rights:**  
+   - Rights to intellectual property and traditional knowledge.  
+   - Rights of displaced communities.  
+   - Rights to rehabilitation and development.  
 
-Additional Resources:
-- Ministry of Tribal Affairs FRA Portal: https://tribal.nic.in/FRA.aspx
-- UNDP and civil society organizations publish monitoring reports on FRA implementation.
-- State Tribal Welfare Departments provide claim forms, guidelines, and district-level updates.
+5. **Role of Gram Sabha:**  
+   - Central decision-making body for initiating claims.  
+   - Approves and verifies claims for IFR and CFR.  
+   - Prepares conservation and management plans.  
 
-Conclusion:
-The FRA 2006 is a landmark legislation empowering tribal and forest-dwelling communities by recognizing their rights and strengthening local self-governance. While Odisha and Madhya Pradesh show leading examples of community empowerment, Tripura and Telangana are still building momentum. The Act remains central to ensuring social justice, livelihood security, and sustainable forest management in India.
+---
+
+Implementation Challenges (General):  
+- Delays in recognition and approval of claims.  
+- Inadequate awareness among communities.  
+- Conflicts between conservation and livelihood needs.  
+- Bureaucratic hurdles and resistance.  
+- State-level variations in implementation.  
+
+---
+
+📍 State-Specific Highlights:  
+
+**1. Odisha:**  
+- One of the leading states in FRA implementation.  
+- Over 4.5 lakh hectares recognized under **Community Forest Rights** (CFR).  
+- Strong involvement of Gram Sabhas in forest management.  
+- Significant recognition of rights of Particularly Vulnerable Tribal Groups (PVTGs).  
+- Challenges: disputes over CFR boundaries and integration with Joint Forest Management (JFM).  
+
+**2. Madhya Pradesh (MP):**  
+- Largest tribal population in India → high relevance of FRA.  
+- Over 60 lakh individual claims filed; large number approved.  
+- Pioneered use of GIS and satellite mapping for claim verification.  
+- Community Forest Rights recognition still limited compared to IFR.  
+- Challenges: eviction threats in protected areas, delayed CFR titles.  
+
+**3. Tripura:**  
+- FRA crucial for tribal-majority areas (over 30% of population).  
+- About 1.2 lakh hectares recognized under FRA (IFR + CFR).  
+- Focus on bamboo, fuelwood, and NTFP (non-timber forest produce).  
+- Issues: lack of awareness campaigns in remote tribal areas, weak institutional support.  
+
+**4. Telangana:**  
+- FRA implementation gained pace after state formation (2014).  
+- Significant focus on rights of Chenchu tribes in Nallamala forest.  
+- Over 3 lakh individual forest rights recognized.  
+- CFR recognition still lagging compared to Odisha.  
+- Challenges: pressure from developmental projects, land-use conflicts.  
+
+---
+
+📊 Key Statistics (as of 2023 – approx.):  
+- Total claims filed in India: ~44 lakh.  
+- Titles distributed: ~20 lakh (covering ~17.5 lakh hectares).  
+- Highest CFR implementation: **Odisha, Maharashtra**.  
+- High rejection rates in MP and Chhattisgarh due to strict verification processes.  
+
+---
+
+Conclusion:  
+The FRA 2006 is a historic legislation that empowers forest-dwelling communities, strengthens local governance, and balances livelihood with conservation. Its effective implementation — especially recognition of Community Forest Rights — is essential for achieving inclusive development, climate resilience, and sustainable forest management.  
+
+📌 For Odisha, Madhya Pradesh, Tripura, and Telangana, FRA continues to evolve as a critical tool for ensuring both **social justice and ecological sustainability**.  
 `;
