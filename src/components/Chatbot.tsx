@@ -1,9 +1,9 @@
-// src/components/Chatbot.tsx
 import { useEffect, useRef, useState } from "react";
 import { X, MessageCircle } from "lucide-react";
 import ChatForm from "./ChatForm";
 import { type ChatMessageType } from "./ChatMessage";
 import { fraInfo } from "../fraInfo";
+import ReactMarkdown from "react-markdown";
 
 type ApiMessage = {
   role: "user" | "bot" | "model";
@@ -12,7 +12,7 @@ type ApiMessage = {
 
 const Chatbot = () => {
   const [chatHistory, setChatHistory] = useState<ChatMessageType[]>([
-    { hideInChat: true, role: "model", text: fraInfo } // hidden FRA knowledge base
+    { hideInChat: true, role: "model", text: fraInfo }
   ]);
   const [showChatbot, setShowChatbot] = useState(false);
   const chatBodyRef = useRef<HTMLDivElement>(null);
@@ -32,7 +32,6 @@ const Chatbot = () => {
           body: JSON.stringify({ contents: apiHistory }),
         }
       );
-
       const data = await response.json();
       const botReply =
         data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || "⚠️ No reply";
@@ -98,27 +97,23 @@ const Chatbot = () => {
             </div>
           </div>
 
-          {/* Chat Messages (skip hidden ones) */}
-          {chatHistory
-            .filter((chat) => !chat.hideInChat)
-            .map((chat, idx) => (
+          {/* Chat Messages */}
+          {chatHistory.map((chat, idx) => (
+            <div
+              key={idx}
+              className={`flex ${chat.role === "user" ? "justify-end" : "justify-start"}`}
+            >
               <div
-                key={idx}
-                className={`flex ${
-                  chat.role === "user" ? "justify-end" : "justify-start"
+                className={`p-2 rounded-xl shadow-sm max-w-[75%] break-words ${
+                  chat.role === "user"
+                    ? "bg-green-600 text-white rounded-br-none"
+                    : "bg-green-100 text-green-800 rounded-bl-none prose prose-sm"
                 }`}
               >
-                <div
-                  className={`p-2 rounded-xl shadow-sm max-w-[75%] break-words ${
-                    chat.role === "user"
-                      ? "bg-green-600 text-white rounded-br-none"
-                      : "bg-green-100 text-green-800 rounded-bl-none"
-                  }`}
-                >
-                  {chat.text}
-                </div>
+                <ReactMarkdown>{chat.text}</ReactMarkdown>
               </div>
-            ))}
+            </div>
+          ))}
 
           {/* Chat Form */}
           <div className="mt-auto pt-2">
