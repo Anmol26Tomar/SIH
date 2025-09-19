@@ -12,7 +12,7 @@ type ApiMessage = {
 
 const Chatbot = () => {
   const [chatHistory, setChatHistory] = useState<ChatMessageType[]>([
-    { hideInChat: true, role: "model", text: fraInfo }
+    { hideInChat: true, role: "model", text: fraInfo } // hidden FRA knowledge base
   ]);
   const [showChatbot, setShowChatbot] = useState(false);
   const chatBodyRef = useRef<HTMLDivElement>(null);
@@ -32,6 +32,7 @@ const Chatbot = () => {
           body: JSON.stringify({ contents: apiHistory }),
         }
       );
+
       const data = await response.json();
       const botReply =
         data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || "⚠️ No reply";
@@ -97,23 +98,27 @@ const Chatbot = () => {
             </div>
           </div>
 
-          {/* Chat Messages */}
-          {chatHistory.map((chat, idx) => (
-            <div
-              key={idx}
-              className={`flex ${chat.role === "user" ? "justify-end" : "justify-start"}`}
-            >
+          {/* Chat Messages (skip hidden ones) */}
+          {chatHistory
+            .filter((chat) => !chat.hideInChat)
+            .map((chat, idx) => (
               <div
-                className={`p-2 rounded-xl shadow-sm max-w-[75%] break-words ${
-                  chat.role === "user"
-                    ? "bg-green-600 text-white rounded-br-none"
-                    : "bg-green-100 text-green-800 rounded-bl-none"
+                key={idx}
+                className={`flex ${
+                  chat.role === "user" ? "justify-end" : "justify-start"
                 }`}
               >
-                {chat.text}
+                <div
+                  className={`p-2 rounded-xl shadow-sm max-w-[75%] break-words ${
+                    chat.role === "user"
+                      ? "bg-green-600 text-white rounded-br-none"
+                      : "bg-green-100 text-green-800 rounded-bl-none"
+                  }`}
+                >
+                  {chat.text}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
 
           {/* Chat Form */}
           <div className="mt-auto pt-2">
