@@ -9,7 +9,7 @@ import Reports from "./pages/Reports";
 import StateDetail from "./pages/StateDetail";
 import Signin from "./pages/signin";
 import Signup from "./pages/signup";
-import Chatbot from "./components/Chatbot";  // 👈 new
+import Chatbot from "./components/Chatbot"; 
 
 const App: React.FC = () => {
   return (
@@ -23,8 +23,6 @@ const App: React.FC = () => {
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>
-
-      {/* 👇 Chatbot is always available, floating bottom-right */}
       <Chatbot />
     </Layout>
   );
